@@ -1,0 +1,16 @@
+
+class Solution {
+    public List<Integer> rightSideView(TreeNode root) {
+        ArrayList<Integer> ans = new ArrayList<>();
+        view(root,0,ans);
+        return ans;
+    }
+    public void view(TreeNode root, int levels , ArrayList<Integer> ans) {
+        if(root==null) return;
+       if(levels>=ans.size()) ans.add(root.val);
+       else ans.set(levels,root.val);
+       view(root.left,levels+1,ans);
+       view(root.right,levels+1,ans);
+
+    }
+}
