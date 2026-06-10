@@ -1,0 +1,16 @@
+
+class Solution {
+    public ArrayList<Integer> leftView(Node root) {
+        ArrayList<Integer> ans = new ArrayList<>();
+        view(root,0,ans);
+        return ans;
+    }
+    public void view(Node root, int levels , ArrayList<Integer> ans) {
+        if(root==null) return;
+       if(levels>=ans.size()) ans.add(root.data);
+       else ans.set(levels,root.data);
+       
+       view(root.right,levels+1,ans);
+        view(root.left,levels+1,ans);
+    }
+}
