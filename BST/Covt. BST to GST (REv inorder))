@@ -1,0 +1,17 @@
+
+class Solution {
+     static int sum ;
+    public static void revinorder(TreeNode root){
+        if (root==null) return;
+       revinorder(root.right);
+       sum += root.val;
+       root.val =sum;
+       revinorder(root.left);
+
+    }
+    public TreeNode convertBST(TreeNode root) {
+        sum =0;
+       revinorder(root);
+       return root;
+    }
+}
