@@ -1,0 +1,10 @@
+class Solution {
+    public int findKthSmallest(int[] nums, int k) {
+        PriorityQueue<Integer> q = new PriorityQueue<>(Collections.reverseOrder());
+        for(int ele:nums){
+            q.add(ele);
+            if(q.size()>k) q.remove();
+        }
+        return q.peek();
+    }
+}
