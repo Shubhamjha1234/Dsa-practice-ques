@@ -6,7 +6,7 @@ class Solution {
      for(int ele :arr){
          pq.add(ele);
      }
-     while(pq.size()>1){
+     while(pq.size()>1){//bcoz when 1 elemnt will left will is 15 nothing will be snd ele to add and thow error.
        int fst = pq.remove();
        int snd = pq.remove();
         cost += fst+snd;
