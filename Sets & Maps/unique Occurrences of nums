@@ -1,0 +1,19 @@
+class Solution {
+    public boolean uniqueOccurrences(int[] arr) {
+        HashMap<Integer, Integer> mapfreq = new HashMap<>();
+        HashMap<Integer, Boolean> seen = new HashMap<>();
+
+        for (int num : arr) {  
+            mapfreq.put(num, mapfreq.getOrDefault(num, 0) + 1); //mapping krega
+        }
+
+        for (int count : mapfreq.values()) { //checks values
+            if (seen.containsKey(count)) {
+                return false;
+            }
+            seen.put(count, true);
+        }
+
+        return true;
+    }
+}
