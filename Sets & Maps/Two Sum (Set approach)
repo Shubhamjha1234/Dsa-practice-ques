@@ -1,0 +1,11 @@
+public class TwoSum {
+    boolean twoSum(int arr[], int target) {
+        HashSet<Integer> set = new HashSet<>();
+        for(int ele : arr){
+            int rem = target - ele; // ele + something = target ; 
+            if(set.contains(rem)) return true; // we got rem in set with gives target ;
+            set.add(ele);
+        }
+        return false;
+    }
+}
