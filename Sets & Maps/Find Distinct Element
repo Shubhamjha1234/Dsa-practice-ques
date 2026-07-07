@@ -1,0 +1,10 @@
+class Solution {
+    static int distinct(int arr[], int n) {
+        HashSet<Integer> Set = new HashSet<> ();
+        for(int ele : arr){
+            Set.add(ele);
+        }
+          return Set.size();
+        
+    }
+}
